@@ -1,0 +1,19 @@
+{
+  "name": "atm-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madhukarchaure04/atm-application.git"
+  },
+  "author": "Madhukar Chaure",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madhukarchaure04/atm-application/issues"
+  },
+  "homepage": "https://github.com/madhukarchaure04/atm-application#readme"
+}
