@@ -1,3 +1,5 @@
+const logger = require('../utils/logger');
+
 const customers = {};
 let currentCustomer = null;
 
@@ -6,26 +8,29 @@ const logIn = name => {
     customers[name] = { name, balance: 0 };
   }
   currentCustomer = customers[name];
-  console.log(`Hello ${currentCustomer.name}.`);
+  console.log(`Hello, ${currentCustomer.name}!`);
+  logger.logBalance(currentCustomer.balance);
 };
 
 const deposit = amount => {
   currentCustomer.balance += amount;
-  console.log(`Your balance is $${currentCustomer.balance}.`);
+  logger.logBalance(currentCustomer.balance);
 };
 
 const withdraw = amount => {
   currentCustomer.balance -= amount;
-  console.log(`Your balance is $${currentCustomer.balance}.`);
+  logger.logBalance(currentCustomer.balance);
 };
 
 const transfer = (target, amount) => {
   customers[currentCustomer.name].balance -= amount;
   customers[target].balance += amount;
-  console.log(`Your balance is $${currentCustomer.balance}.`);
+  logger.logTransfer(target, amount);
+  logger.logBalance(currentCustomer.balance);
 };
 
 const logOut = () => {
+  console.log(`Goodbye, ${currentCustomer.name}!`);
   currentCustomer = null;
 };
 
